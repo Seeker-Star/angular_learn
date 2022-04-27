@@ -1,0 +1,29 @@
+<h3>从数据源到视图</h3>
+<p>
+  <a href="{{url}}">使用插值表达式进行绑定</a>
+</p>
+<p>
+  <a [href]="url" [style.color]="fontColor">使用 [] 进行绑定</a>
+</p>
+<p>
+  <a bind-href="url">使用 bind 进行绑定</a>
+</p>
+<h3>从视图到数据源</h3>
+<p>
+  <button (click)="getUser()">使用（）进行绑定</button>
+</p>
+<p>
+  <button on-click="getUser()">使用 on 进行绑定</button>
+</p>
+<h3>数据双向绑定---需要在 AppModule 中添加对于 FormesModule 的引用</h3>
+<p>
+  <input [(ngModel)]="name" id="userName" type="text">
+</p>
+<p>
+  <input bindon-ngModel="name" type="text">
+</p>
+<h3>事件绑定</h3>
+<input (keyup)="getMsg($event)" text="text">
+<h3>输入的值：{{msg}}</h3>
+<input #refMsgInput (keyup)="getRefMsg(refMsgInput.value)" type="text">
+<p>通过模板引入变量的方式获取到输入的值：{{refMsg}}</p>
