@@ -14,6 +14,13 @@ export class ProductListComponent implements OnInit {
   public name: string | undefined;
   public msg: string | undefined;
   public refMsg: string | undefined;
+  public products = [{
+    'name':'苹果🍎',
+    'price':'$20'
+  },{
+    'name':'香蕉🍌',
+    'price':'$40'
+  }];
 
   constructor() {
   }
@@ -32,5 +39,28 @@ export class ProductListComponent implements OnInit {
 
   getRefMsg(msg: string): void {
     this.refMsg = msg;
+  }
+
+  trackByIndex(index: number, item: any): string {
+    return item.price;
+  }
+
+  addProduct() {
+    this.products = [{
+      'name': '苹果🍎',
+      'price': '$20'
+    }, {
+      'name': '香蕉🍌',
+      'price': '$40'
+    }, {
+      'name': 'wuwuwu',
+      'price': '$120'
+    }, {
+      'name': 'xixi',
+      'price': '$570'
+    }, {
+      'name': 'lululu',
+      'price': '$' + (Math.random() * 100).toFixed()
+    }];
   }
 }

@@ -27,3 +27,12 @@
 <h3>输入的值：{{msg}}</h3>
 <input #refMsgInput (keyup)="getRefMsg(refMsgInput.value)" type="text">
 <p>通过模板引入变量的方式获取到输入的值：{{refMsg}}</p>
+<p>不使用 trackBy 跟踪属性</p>
+<p *ngFor="let item of products; let i = index">{{i+1}} - {{item.name}} --- {{item.price}}</p>
+<p>使用 trackBy 跟踪属性</p>
+<div>
+  <p *ngFor="let item of products; let i = index; trackBy: trackByIndex">
+    {{i+1}} - {{item.name}} --- {{item.price}}
+  </p>
+</div>
+<button (click)="addProduct()">新增</button>
