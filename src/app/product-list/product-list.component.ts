@@ -12,8 +12,8 @@ export class ProductListComponent implements OnInit {
   public fontColor = 'red';
   public url = 'https://google.com.hk';
   public name: string | undefined;
-  public msg: string | undefined
-  public refMsg: string | undefined
+  public msg: string | undefined;
+  public refMsg: string | undefined;
 
   constructor() {
   }
@@ -21,16 +21,16 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getUser() {
-    alert(this.name)
+  getUser(): void {
+    alert(this.name);
   }
 
-  getMsg(event: KeyboardEvent) {
+  getMsg(event: KeyboardEvent): void {
     console.log(event);
     this.msg = (event.target as HTMLInputElement).value;
   }
 
-  getRefMsg(msg: string) {
-    this.refMsg = msg
+  getRefMsg(msg: string): void {
+    this.refMsg = msg;
   }
 }
