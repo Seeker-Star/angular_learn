@@ -51,3 +51,23 @@
   将父组件的数据绑定到子组件上
  -->
 <app-child-component [parentTitle]="title" [parentGetMsg]='getMsg'></app-child-component>
+<h2>父组件内容：</h2>
+
+<h3>1、使用 @ViewChild 装饰器获取子组件数据</h3>
+
+<p>
+  <button (click)="getChildMsg()">获取子组件的 msg 数据</button>
+</p>
+
+<!-- <p>
+  <button (click)="runChildFunc()">调用子组件的方法</button>
+</p> -->
+
+<hr>
+
+<h2>子组件内容：</h2>
+
+<!--
+  在子组件上定义一个模板引用变量
+ -->
+<app-child-component #childComponent></app-child-component>

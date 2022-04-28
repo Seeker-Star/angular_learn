@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-product-list',
@@ -22,6 +22,8 @@ export class ProductListComponent implements OnInit {
     'price':'$40'
   }];
 
+  @ViewChild('childComponent') child: any;
+
   constructor() {
   }
 
@@ -43,6 +45,14 @@ export class ProductListComponent implements OnInit {
 
   trackByIndex(index: number, item: any): string {
     return item.price;
+  }
+
+  getParentMsg() {
+    alert('我是父组件的 getMsg 方法');
+  }
+
+  getChildMsg() {
+    alert(this.child.msg);
   }
 
   addProduct() {

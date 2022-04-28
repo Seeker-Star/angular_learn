@@ -7,6 +7,8 @@ import {AppComponent} from './app.component';
 import {ProductListComponent} from './product-list/product-list.component';
 import { ChildComponentComponent } from './child-component/child-component.component';
 
+import { StorageService } from './services/storage/storage.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,7 @@ import { ChildComponentComponent } from './child-component/child-component.compo
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
