@@ -36,3 +36,18 @@
   </p>
 </div>
 <button (click)="addProduct()">新增</button>
+<h2>父组件内容：</h2>
+
+<p>
+  <label for="title">标题：</label>
+  <input id="title" type="text" [(ngModel)]="title">
+</p>
+
+<hr>
+
+<h2>子组件内容：</h2>
+
+<!--
+  将父组件的数据绑定到子组件上
+ -->
+<app-child-component [parentTitle]="title" [parentGetMsg]='getMsg'></app-child-component>
